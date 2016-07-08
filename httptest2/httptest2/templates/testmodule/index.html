@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}testmodule Demo{% endblock %}
+
+{% block content %}
+<form method="post" action="index">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+{% if delivery_list %}
+    <ul>
+    {% for delivery in delivery_list %}
+        <li><p>{{ delivery.delivery_id }} ----- {{ delivery.status }}</p></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No deliveries are available.</p>
+{% endif %}
+{% endblock content %}

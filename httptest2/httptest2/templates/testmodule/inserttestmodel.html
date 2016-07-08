@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Insert Test Model Demo{% endblock %}
+
+{% block content %}
+<h2>Insert Test Model Demo</h2>
+<form method="post" action="inserttestmodel">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock content %}
